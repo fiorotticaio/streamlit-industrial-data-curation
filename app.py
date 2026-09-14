@@ -46,15 +46,11 @@ st.set_page_config(
 # --------------------------------------------------------------------------
 
 def _init_state() -> None:
-    """Ensure all session_state keys exist before first use."""
     if "raw_df" not in st.session_state:
         st.session_state.raw_df = generate_raw_dataset()
     if "decisions" not in st.session_state:
-        # record_id -> {"decision": "accepted"/"rejected"/"overridden",
-        #               "final_category": str, "final_text": str}
         st.session_state.decisions = {}
     if "dup_resolutions" not in st.session_state:
-        # dup_group_id -> record_id kept as the "primary" record
         st.session_state.dup_resolutions = {}
 
 
@@ -95,7 +91,6 @@ with st.sidebar:
 
     st.divider()
     st.caption(
-        "**Tractian Data Foundry Engineer — portfolio demo**\n\n"
         "Showcases duplicate detection, missingness/anomaly profiling, "
         "and an AI-assisted human-in-the-loop curation queue."
     )
