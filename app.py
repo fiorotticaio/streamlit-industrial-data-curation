@@ -111,9 +111,9 @@ tab_dashboard, tab_dupes, tab_curation = st.tabs(
     ["📊 Data Health", "🧬 Duplicate Review", "🤖 AI Curation Queue"]
 )
 
-# ==========================================================================
+# ----------------------------------------------------------------------------
 # TAB 1 — DATA HEALTH DASHBOARD
-# ==========================================================================
+# ----------------------------------------------------------------------------
 with tab_dashboard:
     summary = data_health_summary(raw_df)
 
@@ -182,9 +182,9 @@ with tab_dashboard:
     with st.expander("View raw dataset sample"):
         st.dataframe(raw_df.head(200), use_container_width=True, height=300)
 
-# ==========================================================================
+# ----------------------------------------------------------------------------
 # TAB 2 — DUPLICATE REVIEW
-# ==========================================================================
+# ----------------------------------------------------------------------------
 with tab_dupes:
     st.subheader("Near-duplicate groups")
     st.caption(
@@ -248,9 +248,9 @@ with tab_dupes:
     if not exact_dupes.empty:
         st.dataframe(exact_dupes.head(100), use_container_width=True, height=250)
 
-# ==========================================================================
+# ----------------------------------------------------------------------------
 # TAB 3 — AI CURATION QUEUE
-# ==========================================================================
+# ----------------------------------------------------------------------------
 with tab_curation:
     st.subheader("Records needing review")
     st.caption(
