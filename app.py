@@ -1,10 +1,9 @@
 """
 app.py
 ------
-Internal Data Quality & Curation Tool (portfolio project).
+Internal Data Quality & Curation Tool
 
-A Streamlit prototype for a "Data Foundry Engineer"-style workflow: ingest
-noisy industrial sensor/maintenance data, surface data-quality issues
+Ingest noisy industrial sensor/maintenance data, surface data-quality issues
 (missingness, duplication, anomalies), and provide a human-in-the-loop
 interface to review AI-generated normalization/categorization suggestions
 before they're accepted into a "curated" dataset.
